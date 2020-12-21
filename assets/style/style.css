@@ -1,0 +1,1210 @@
+@-webkit-keyframes curtainUp {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes curtainUp {
+  from {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes rightFade {
+  from {
+    -webkit-transform: translate3d(300px, 0px, 0px);
+            transform: translate3d(300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rightFade {
+  from {
+    -webkit-transform: translate3d(300px, 0px, 0px);
+            transform: translate3d(300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes leftFade {
+  from {
+    -webkit-transform: translate3d(-300px, 0px, 0px);
+            transform: translate3d(-300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes leftFade {
+  from {
+    -webkit-transform: translate3d(-300px, 0px, 0px);
+            transform: translate3d(-300px, 0px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes topFade {
+  from {
+    -webkit-transform: translate3d(0px, -100px, 0px);
+            transform: translate3d(0px, -100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes topFade {
+  from {
+    -webkit-transform: translate3d(0px, -100px, 0px);
+            transform: translate3d(0px, -100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bottomFade {
+  from {
+    -webkit-transform: translate3d(0px, 100px, 0px);
+            transform: translate3d(0px, 100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomFade {
+  from {
+    -webkit-transform: translate3d(0px, 100px, 0px);
+            transform: translate3d(0px, 100px, 0px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: 'Catamaran-Light';
+  src: url(font/Catamaran-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: 'Catamaran-Regular';
+  src: url(font/Catamaran-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Catamaran-Light";
+  font-weight: 300;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body .active {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-transform: translateY(0) translateX(0) scale(1) !important;
+          transform: translateY(0) translateX(0) scale(1) !important;
+}
+
+body .active-nav {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+body .active-arrow {
+  opacity: 1 !important;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+body .curtain {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  width: 100vw;
+  height: 100vh;
+  background-color: #171c36;
+  -webkit-animation-name: curtainUp;
+          animation-name: curtainUp;
+  -webkit-animation-timing-function: cubic-bezier(0.7, 0, 0.12, 1.11);
+          animation-timing-function: cubic-bezier(0.7, 0, 0.12, 1.11);
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+body header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+body header nav {
+  height: 10vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body header nav .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20vw;
+  height: 100%;
+}
+
+body header nav .name h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: white;
+  font-family: 'Catamaran-Light';
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body header nav .name h2:hover {
+  cursor: pointer;
+  color: #bebdbd;
+}
+
+body header nav .social-icons {
+  height: 100%;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 3rem;
+}
+
+body header nav .social-icons div {
+  width: 2rem;
+  height: auto;
+  margin: 0 2rem;
+  color: white;
+}
+
+body header nav .social-icons div img {
+  width: 100%;
+  height: auto;
+  padding: 1.1rem;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body header nav .social-icons div:hover {
+  cursor: pointer;
+}
+
+body header nav .social-icons .facebook img:hover {
+  padding: 10px;
+  padding: 1rem;
+  background-color: cornflowerblue;
+}
+
+body header nav .social-icons .github {
+  width: 3.8rem !important;
+}
+
+body header nav .social-icons .github img:hover {
+  padding: 10px;
+  border-radius: 30px;
+  background-color: black;
+}
+
+body header .left-bar {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10vw;
+  height: 90vh;
+}
+
+body header .left-bar .down-arrow {
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+body header .left-bar .down-arrow:hover {
+  cursor: pointer;
+}
+
+body header .left-bar .down-arrow:hover .down {
+  background-color: #ff4848;
+}
+
+body header .left-bar .down-arrow .down {
+  -webkit-animation-name: topFade;
+          animation-name: topFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 0.3rem;
+  height: 4rem;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+body header .left-bar .down-arrow .down:before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 3.5rem;
+  left: -1rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body header .left-bar .down-arrow .down:after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 3.5rem;
+  left: -0.2rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body header .left-bar .up-arrow {
+  opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+body header .left-bar .up-arrow:hover {
+  cursor: pointer;
+}
+
+body header .left-bar .up-arrow:hover .up {
+  background-color: #ff4848;
+}
+
+body header .left-bar .up-arrow .up {
+  -webkit-animation-name: bottomFade;
+          animation-name: bottomFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 0.3rem;
+  height: 4rem;
+  right: 50% !important;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+body header .left-bar .up-arrow .up:before {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 0.4rem;
+  left: -1.1rem;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body header .left-bar .up-arrow .up:after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 0.4rem;
+  left: -0.1rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body header .left-bar ul li {
+  list-style: none;
+}
+
+body header .left-bar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+body #home {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+body #home .fade {
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+}
+
+body #home .home-text {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+body #home .home-text .left-fade {
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #home .home-text h1 {
+  font-size: 9rem;
+  font-weight: 200;
+  color: white;
+  font-family: 'Catamaran-Light';
+  height: 9rem;
+}
+
+body #home .home-text .underlines {
+  position: relative;
+  margin-top: 10%;
+  height: 8rem;
+  color: #fff;
+}
+
+body #home .home-text .underlines:before {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 2rem;
+  left: 1rem;
+}
+
+body #home .home-text .underlines:after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 4rem;
+  left: 7rem;
+}
+
+body #home .home-text p {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Catamaran-Light';
+}
+
+body #home .bright-shade-1 {
+  position: absolute;
+  top: 6%;
+  right: 0%;
+  width: 17%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+}
+
+body #home .bright-shade-2 {
+  position: absolute;
+  top: 9%;
+  right: 29%;
+  width: 20%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+}
+
+body #home .moon {
+  position: absolute;
+  top: 5%;
+  right: 7%;
+  width: 35%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+}
+
+body #home .portfolio {
+  position: absolute;
+  top: 42%;
+  right: 22%;
+  width: 30%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+body #home .dark-shade-1 {
+  position: absolute;
+  top: 66%;
+  right: 6%;
+  width: 15%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.71, 0.35, 0.42, 1.35);
+}
+
+body #home .dark-shade-2 {
+  position: absolute;
+  top: 61%;
+  right: 26%;
+  width: 20%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+}
+
+body #home .dark-shade-3 {
+  position: absolute;
+  top: 37%;
+  right: -5%;
+  width: 20%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+          animation-timing-function: cubic-bezier(0.84, 0.04, 0.42, 1.35);
+}
+
+body .bg-container {
+  position: relative;
+  background-image: url(../images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+body .bg-container .pre-nex {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+  font-size: 5rem;
+  width: 100vw;
+}
+
+body .bg-container .star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 89%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body .bg-container .moon-shine {
+  position: absolute;
+  right: -15%;
+  width: 75%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body #about {
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+}
+
+body #about .about-header {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+body #about .about-header .left-fade {
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #about .about-header h1 {
+  font-size: 9rem;
+  font-weight: 200;
+  color: white;
+  font-family: 'Catamaran-Light';
+  height: 9rem;
+}
+
+body #about .about-header .underlines {
+  position: relative;
+  margin-top: 10%;
+  height: 8rem;
+  color: #fff;
+}
+
+body #about .about-header .underlines:before {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 2rem;
+  left: 1rem;
+}
+
+body #about .about-header .underlines:after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 4rem;
+  left: 7rem;
+}
+
+body #about .about-header p {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Catamaran-Light';
+}
+
+body #about .about-header .button {
+  position: absolute;
+  margin-top: 2.5rem;
+  background-color: #ff4848;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #about .about-header .button:hover {
+  cursor: pointer;
+}
+
+body #about .about-img .image {
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+  position: absolute;
+  bottom: 16%;
+  right: 0%;
+  width: 50vw;
+  height: 75vh;
+}
+
+body #about .about-img .image img {
+  width: 60%;
+  height: auto;
+}
+
+body #more-me {
+  -webkit-transform: translateX(100%) scale(0);
+          transform: translateX(100%) scale(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+}
+
+body #more-me .more-me-image {
+  position: absolute;
+  left: 0;
+  top: 6%;
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #more-me .more-me-image .image {
+  height: 61.5vh;
+  width: 20vw;
+  overflow: hidden;
+}
+
+body #more-me .more-me-image .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
+body #more-me .more-me-image .image a {
+  position: absolute;
+  bottom: -12%;
+  left: 0;
+  width: 17.1vw;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ff4848;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+body #more-me .more-me-image .image a:hover {
+  cursor: pointer;
+}
+
+body #more-me .more-about {
+  width: 60vw;
+  position: absolute;
+  bottom: 20%;
+  right: 7%;
+  height: 67vh;
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+}
+
+body #more-me .more-about img {
+  width: 100%;
+  height: auto;
+}
+
+body #contact {
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: 90vw;
+}
+
+body #contact .contact-header {
+  position: absolute;
+  left: 0;
+  top: 15%;
+}
+
+body #contact .contact-header .left-fade {
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #contact .contact-header h1 {
+  font-size: 9rem;
+  font-weight: 200;
+  color: white;
+  font-family: 'Catamaran-Light';
+  height: 9rem;
+}
+
+body #contact .contact-header .underlines {
+  position: relative;
+  margin-top: 10%;
+  height: 8rem;
+  color: #fff;
+}
+
+body #contact .contact-header .underlines:before {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 2rem;
+  left: 1rem;
+}
+
+body #contact .contact-header .underlines:after {
+  content: "";
+  position: absolute;
+  width: 9rem;
+  height: 0.1rem;
+  border: 0.1rem solid #ff4848;
+  border-radius: 2rem;
+  background-color: #ff4848;
+  top: 4rem;
+  left: 7rem;
+}
+
+body #contact .contact-header p {
+  font-size: 2rem;
+  color: white;
+  font-family: 'Catamaran-Light';
+}
+
+body #contact .contact-header .button {
+  position: absolute;
+  margin-top: 2.5rem;
+  background-color: #ff4848;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-animation-name: leftFade;
+          animation-name: leftFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+          animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+}
+
+body #contact .contact-header .button:hover {
+  cursor: pointer;
+}
+
+body #contact .contact-header .button:hover {
+  cursor: pointer;
+}
+
+body #contact .contact-header .phone a {
+  color: cornflowerblue;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body #contact .contact-header .phone a:hover {
+  color: azure;
+}
+
+body #contact .contact-img .image {
+  -webkit-animation-name: rightFade;
+          animation-name: rightFade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+          animation-timing-function: cubic-bezier(0.59, 0.36, 0.82, 1.18);
+  position: absolute;
+  bottom: 10%;
+  right: 10rem;
+  width: 52vw;
+  height: 75vh;
+}
+
+body #contact .contact-img .image img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 3px !important;
+  }
+  body {
+    display: block !important;
+    overflow: hidden;
+  }
+  body header {
+    margin-top: 20rem;
+  }
+  body header .left-bar {
+    height: 75vh;
+  }
+  body header .left-bar ul {
+    font-size: 3rem;
+  }
+  body .bg-container .star {
+    top: 106px;
+    right: 0;
+    width: 100%;
+  }
+  body .bg-container .moon-shine {
+    right: 0;
+    width: 100%;
+  }
+  body #home {
+    bottom: -12%;
+  }
+  body #home .home-text {
+    position: absolute;
+    left: 0;
+    top: 15%;
+  }
+  body #home .home-text .left-fade {
+    -webkit-animation-name: leftFade;
+            animation-name: leftFade;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+            animation-timing-function: cubic-bezier(0.72, 0.27, 0.33, 1.13);
+  }
+  body #home .home-text h1 {
+    font-size: 9rem;
+    font-weight: 200;
+    color: white;
+    font-family: 'Catamaran-Light';
+    height: 9rem;
+  }
+  body #home .home-text .underlines {
+    position: relative;
+    margin-top: 10%;
+    height: 8rem;
+    color: #fff;
+  }
+  body #home .home-text .underlines:before {
+    content: "";
+    position: absolute;
+    width: 9rem;
+    height: 0.1rem;
+    border: 0.1rem solid #ff4848;
+    border-radius: 2rem;
+    background-color: #ff4848;
+    top: 2rem;
+    left: 1rem;
+  }
+  body #home .home-text .underlines:after {
+    content: "";
+    position: absolute;
+    width: 9rem;
+    height: 0.1rem;
+    border: 0.1rem solid #ff4848;
+    border-radius: 2rem;
+    background-color: #ff4848;
+    top: 4rem;
+    left: 7rem;
+  }
+  body #home .home-text p {
+    font-size: 2rem;
+    color: white;
+    font-family: 'Catamaran-Light';
+  }
+  body #home .bright-shade-1 {
+    position: absolute;
+    top: 30%;
+    right: 20%;
+    width: 29rem;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body #home .bright-shade-2 {
+    display: none;
+  }
+  body #home .moon {
+    position: absolute;
+    top: 30.5%;
+    right: 30.5%;
+    width: 54rem;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body #home .portfolio {
+    position: absolute;
+    top: 42%;
+    right: 35%;
+    width: 46rem;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  body #home .dark-shade-1 {
+    position: absolute;
+    top: 49%;
+    right: 22%;
+    width: 25rem;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body #home .dark-shade-2 {
+    position: absolute;
+    top: 47%;
+    right: 61%;
+    width: 30rem;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body #home .dark-shade-3 {
+    display: none;
+  }
+  body #about {
+    bottom: -15%;
+  }
+  body #about .about-img .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 19rem;
+  }
+  body #more-me {
+    bottom: -35%;
+  }
+  body #more-me .more-about {
+    width: 80vw;
+    bottom: 20%;
+  }
+  body #more-me .more-me-image {
+    top: 30.5%;
+    left: 35%;
+  }
+  body #more-me .more-me-image .image {
+    display: none;
+    height: 16.5vh;
+    width: 20.6vw;
+  }
+  body #contact {
+    bottom: -12%;
+  }
+  body #contact .contact-img .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 10rem;
+    padding-right: 19rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  html {
+    font-size: 7px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
